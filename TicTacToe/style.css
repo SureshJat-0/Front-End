@@ -67,3 +67,7 @@ p {
     cursor: pointer;
     font-size: 1.5rem;
 }
+
+.bg-green button{
+    color: rgb(46, 254, 46);
+}

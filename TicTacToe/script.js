@@ -52,10 +52,16 @@ function checkForWin() {
     // Checking for Horizontal
     for (let i = 0; i < 3; i++) {
         if (array[3 * i] === array[3 * i + 1] && array[3 * i + 1] === array[3 * i + 2] && array[3 * i + 2] === "X") {
+            btnList[3 * i].classList.add("bg-green");
+            btnList[3 * i + 1].classList.add("bg-green");
+            btnList[3 * i + 2].classList.add("bg-green");
             currState.innerText = "Player X Wins!";
             playerXWinCount++;
             stopExe();
         } else if (array[3 * i] == array[3 * i + 1] && array[3 * i + 1] == array[3 * i + 2] && array[3 * i + 2] == "O") {
+            btnList[3 * i].classList.add("bg-green");
+            btnList[3 * i + 1].classList.add("bg-green");
+            btnList[3 * i + 2].classList.add("bg-green");
             currState.innerText = "Player O Wins!";
             playerOWinCount++;
             stopExe();
@@ -65,10 +71,16 @@ function checkForWin() {
     // Checking for Vertical
     for (let i = 0; i < 3; i++) {
         if (array[i] === array[3 + i] && array[3 + i] === array[6 + i] && array[6 + i] === "X") {
+            btnList[i].classList.add("bg-green");
+            btnList[3 + i].classList.add("bg-green");
+            btnList[6 + i].classList.add("bg-green");
             currState.innerText = "Player X Wins!";
             playerXWinCount++;
             stopExe();
         } else if (array[i] === array[3 + i] && array[3 + i] === array[6 + i] && array[6 + i] === "O") {
+            btnList[i].classList.add("bg-green");
+            btnList[3 + i].classList.add("bg-green");
+            btnList[6 + i].classList.add("bg-green");
             currState.innerText = "Player O Wins!";
             playerOWinCount++;
             stopExe();
@@ -77,22 +89,34 @@ function checkForWin() {
 
     // Checking for Diagonals
     if (array[0] === array[4] && array[4] === array[8] && array[8] === "X") {
+        btnList[0].classList.add("bg-green");
+        btnList[4].classList.add("bg-green");
+        btnList[8].classList.add("bg-green");
         currState.innerText = "Player X Wins!";
         playerXWinCount++;
         stopExe();
     } else if (array[0] === array[4] && array[4] === array[8] && array[8] === "O") {
+        btnList[0].classList.add("bg-green");
+        btnList[4].classList.add("bg-green");
+        btnList[8].classList.add("bg-green");
         currState.innerText = "Player O Wins!";
         playerOWinCount++;
         stopExe();
     }
 
     if (array[2] === array[4] && array[4] === array[6] && array[6] === "X") {
+        btnList[2].classList.add("bg-green");
+        btnList[4].classList.add("bg-green");
+        btnList[6].classList.add("bg-green");
         currState.innerText = "Player X Wins!";
         playerXWinCount++;
         stopExe();
     } else if (array[2] === array[4] && array[4] === array[6] && array[6] === "O") {
+        btnList[2].classList.add("bg-green");
+        btnList[4].classList.add("bg-green");
+        btnList[6].classList.add("bg-green");
         currState.innerText = "Player O Wins!";
-        playerXWinCount++;
+        playerOWinCount++;
         stopExe();
     }
 
@@ -129,9 +153,11 @@ reset.addEventListener("click", () => {
     // Reseting Current State 
     currState.innerText = "Player X turn";
     currPlayer = "X";
+    // Resetin Green color
+    for (let btn of btnList) {
+        btn.classList.remove("bg-green");
+    }
 
 });
-
-
 
 
