@@ -14,7 +14,7 @@ youChoseList.forEach((choise, ind) => {
     choise.addEventListener("click", () => {
 
         // Generate Random choise after image is clicked
-        let compNum = Math.floor(Math.random() * 9 / 3);
+        let compNum = Math.floor(Math.random() * 3);
 
         // User Choise 
         let userNum = ind;
@@ -26,32 +26,29 @@ youChoseList.forEach((choise, ind) => {
 
 // Checking for the winner
 const checkWin = (compNum, userNum) => {
-    // console.log(`Comp : ${array[randomNum]} || user : ${array[userNum]}`);
-    if (userNum === 0) {
-        if (compNum === 0) {
-            draw(userNum, compNum);
-        } else if (compNum === 1) {
-            compWin(userNum, compNum);
-        } else {
-            userWin(userNum, compNum);
-        }
-    } else if (userNum === 1) {
-        if (compNum === 0) {
-            userWin(userNum, compNum);
-        } else if (compNum === 1) {
-            draw(userNum, compNum);
-        } else {
-            compWin(userNum, compNum);
-        }
+
+    if (compNum === userNum) {
+        draw(userNum, compNum);
     } else {
-        if (compNum === 0) {
-            compWin(userNum, compNum);
-        } else if (compNum === 1) {
+        let isUserWin;
+        if (userNum === 0) {
+            // paper, scissors
+            isUserWin = compNum === 1 ? false : true;
+        } else if (userNum === 1) {
+            // rock, scissors
+            isUserWin = compNum === 0 ? true : false;
+        } else {
+            // rock, paper
+            isUserWin = compNum === 0 ? false : true;
+        }
+
+        if (isUserWin) {
             userWin(userNum, compNum);
         } else {
-            draw();
+            compWin(userNum, compNum);
         }
     }
+
 }
 
 // User Win 
