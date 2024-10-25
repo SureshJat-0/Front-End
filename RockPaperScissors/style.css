@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #433878;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    align-items: center;
+    background-color: #7E60BF;
+    color: black;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.images img {
+    height: 170px;
+    width: 160px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 4px solid transparent;
+    cursor: pointer;
+}
+
+.images img:hover {
+    border: border-box;
+    border: 4px solid black;
+}
+
+.scores {
+    display: flex;
+    gap: 40px;
+    margin: 10px;
+    color: #FFE1FF;
+}
+
+.scores p {
+    font-size: 2rem;
+}
+
+.your-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comp-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.runtime {
+    font-size: 1.5rem;
+    color: #E4B1F0;
+    margin: 10px;
+    text-align: center;
+}
+
+.curr-state {
+    font-size: 1.6rem;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(28, 25, 25);
+    color: white;
+}
